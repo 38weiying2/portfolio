@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python1:人體運動姿勢辨識及矯正比對分析之系統</title>
+  <base target="_self" />
+  <link rel="shortcut icon" href="./images/icon1.png" />
+  <link rel="bookmark" href="./images/icon1.png" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <!-- 英文+中文字體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+SC&family=Mouse+Memoirs&family=Noto+Serif+TC:wght@500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="header">
+    <div class="title">
+      <h1>人體運動姿勢辨識及矯正比對分析之系統</h1>
+    </div>
+  </div>
+
+  <div class="mynav">
+    <!-- nav -->
+    <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
+      <li class="nav-item border-right" role="presentation">
+        <button class="nav-link active border-left-radius" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+          type="button" role="tab" aria-controls="home" aria-selected="true">
+          畢業專題介紹
+        </button>
+      </li>
+      <li class="nav-item border-right" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+          role="tab" aria-controls="profile" aria-selected="false">
+          學習收穫
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link border-right-radius" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+          type="button" role="tab" aria-controls="contact" aria-selected="false">
+          相關成果
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- tab-content -->
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <!-- tab-content1 -->
+      <div id="tab-content1" class="main">
+        <section class="left">
+          <h5>導覽目錄</h5>
+          <hr />
+          <a href="#content1-1">
+            <li>摘要</li>
+          </a><br />
+          <a href="#content1-2">
+            <li>動機</li>
+          </a><br />
+          <a href="#content1-3">
+            <li>系統架構</li>
+          </a><br />
+          <a href="#content1-4">
+            <li>影像辨識</li>
+          </a><br />
+          <a href="#content1-5">
+            <li>深度學習</li>
+          </a><br />
+          <a href="#content1-6">
+            <li>實驗結果</li>
+          </a>
+        </section>
+
+        <section class="right">
+          <div id="content1-1">
+            <h3>1. 摘要</h3>
+            <p>
+              人體動作辨識已經是一個廣泛應用的研究領域，本論文設計出一套運用視覺化分析來偵測瑜珈運動姿勢的系統，透過時空圖卷積網絡模型(Spatial
+              Temporal Graph Convolutional Networks,
+              ST-GCN)結構建立骨架圖，並採用圖卷積網絡(Graph Convolutional
+              Networks, GCN)以及長短期記憶模型(Long Short Term Memory
+              Networks,
+              LSTM)的機器學習方式來對骨架圖進行分類、辨識，此技術會建立出具時序性的資料，能夠與資料庫中的動作比對正確度，若使用者的姿勢正確度較低，則使用者就能得知自己的動作不正確，透過辨識多次練習過程，能夠達到修正動作的效果。實驗結果顯示，本論文所提方法可以獲得良好的成效。
+            </p>
+            <br />
+          </div>
+          <div id="content1-2">
+            <h3>2. 動機</h3>
+            <p>
+              由於網路影視平台的趨勢及方便性，人們會在網路上搜尋運動、有氧舞蹈、瑜珈等等相關的示範影片或圖片，並跟著影片中的示範者練習動作，但沒有專業人員在旁協助指導的情況下，在螢幕前的人們不一定能做出和影片中示範者相同標準的動作，錯誤的姿勢可能會導致運動傷害，像是關節、骨骼肌肉受損等等，也無法發揮運動真正的效果，若是為此發展出一套系統來辨識使用者在運動期間的肢體動作標準程度，並為使用者分級規劃動作難度，不僅可以達到此動作應有的運動效果，還可以避免肢體動作有誤而造成運動損傷。
+            </p>
+            <p>
+              以瑜珈為例，當使用者看著影片中的人示範時，會依照示範者的四肢進行模仿，但事實做出來的動作可能無法達到原本應有的運動效果，原因是某些部位的位置不是正確的，例如圖一的左圖，若手向後伸長，則不會對身體造成壓迫，圖一的右圖則是手向上方伸長、甚至稍微向前傾斜，此動作可能對前膝蓋或其他部會造成傷害，所以沒有專業人士在旁監看使用者的姿態，使用者也難以自我調整改善。
+            </p>
+            <img class="img1 align-center" src="./images/intro1.png" alt="" />
+            <h5 class="align-center">圖一</h5>
+            <br />
+          </div>
+          <div id="content1-3" style="display: flex; margin: 3rem 0rem">
+            <div>
+              <h3>3. 系統架構</h3>
+              <p>
+                以下四點為主要步驟，系統架構之完整步驟如右方圖二所示:<br />
+                1.透過影像處理程式做演算來擷取各姿勢影像<br />
+                2.使用ST-GCN模型建構使用者的姿勢模型<br />
+                3.利用圖卷積網絡(GCN)對模型進行分類<br />
+                4.將圖卷積網絡分析出的時空圖模型送入資料庫中比對姿勢
+              </p>
+
+              <img class="img1" src="./images/intro3.png" alt="" />
+              <h5 class="align-center">圖三 : 系統示意圖</h5>
+            </div>
+            <div style="padding-top: 1rem">
+              <img class="img1" style="width: 95%" src="./images/intro2.png" alt="" />
+              <h5 class="align-center">圖二 : 系統架構圖</h5>
+            </div>
+            <br />
+          </div>
+          <div id="content1-4" style="margin: 3rem 0rem">
+            <h3>4. 影像辨識</h3>
+            <p>
+              首先利用OpenPose來提取人體骨架關鍵點(Keypoint)，其中生成的各點Keypoint數據內容為x,
+              y, c，x及 y指各個點在畫面上的座標，c指的是confidence
+              score，其數值c介於0到1之間，OpenPose可使用三種資料集來生成骨架數據，分別為：<br />
+              <li>MPII Dataset共15個關鍵點，組成結構較簡單的骨架。</li>
+              <li>
+                COCO Dataset共18個關鍵點，相較於MPII Dataset，COCO
+                Dataset將頭部細分為五個關鍵點。
+              </li>
+              <li>
+                BODY25
+                Dataset共25個關鍵點，比前兩個Dataset多了較詳細的腳部關鍵點。我們採用了此方法。
+              </li>
+            </p>
+            <img src="./images/intro4.png" class="img2 align-center" alt="" />
+            <h5 class="align-center">圖四 : Openpose</h5>
+            <br />
+            <p>
+              再來會將Openpose生成之骨架圖送進ST-GCN作為骨架模型，該模型會自動從數據中學習空間和時間模式。它可以避免在將3D訊息轉換為2D訊息期間丟失時間和空間訊息，將輸入的關鍵點序列中建立一個時空圖（Spatial-Temporal
+              Graph）。
+            </p>
+            <img src="./images/intro5.png" class="img1 align-center" alt="" />
+            <h5 class="align-center">圖五 : ST-GCN</h5>
+          </div>
+          <div id="content1-5">
+            <h3>5. 深度學習</h3>
+
+            <p>
+              LSTM的概念為將遞迴神經網路想像成相似的單元，不斷地將過往資訊往下傳遞，也就是說過去的預測的Output會成為將來較近單元的Input，並以此類推，如圖七，LSTM目的是設計用來改善
+              RNN 在長期記憶的不足。
+            </p>
+            <img src="./images/intro6.png" class="align-center" style="width: 50%" alt="" />
+            <h5 class="align-center">圖六 : LSTM概念圖</h5>
+            <p>
+              影像辨識皆完成之後，我們將圖卷積網絡分析出的時空圖模型送入LSTM深度學習模型中比對姿勢。目前能夠做到將各影片分類，並且比較該影片與類別的相似度。
+            </p>
+            <br />
+          </div>
+          <div id="content1-6">
+            <h3>6. 實驗結果</h3>
+            <p>
+              將所收集的動作資料，在資料庫中分類成五類動作類型，前四類分別為「三角式Triangle
+              Pose」、「樹式Tree Pose」、「騎士二式Virabhadrasana Ⅱ
+              Pose」、「下犬式Downward Dog
+              Pose」，最後一類為異於前四類的多筆相異動作資料，集合成「其他動作Other
+              Pose」類型，圖八為各個動作所收集到的標準動作影片數量。
+            </p>
+            <div style="display: flex">
+              <div style="width: 50%">
+                <img src="./images/intro7.png" alt="" />
+                <h5>圖七 : 建置環境之套件及系統環境版本詳細資訊</h5>
+              </div>
+              <div style="width: 50%">
+                <img src="./images/intro8.png" alt="" />
+                <h5>圖八 : 資料集</h5>
+              </div>
+            </div>
+
+            <p style="padding-top: 3rem">
+              單一動作訓練 <br />
+              將騎士二式(Virabhadrasana Ⅱ
+              Pose)作為此次訓練之標準動作，將騎士二式的資料標記為
+              0.85，將其他動作的資料標記為 0.15，設定 epoch = 500，利用 LSTM
+              及留一交叉驗證法(Leave-One-Out
+              cross-Validation)來訓練及測試模型。
+            </p>
+            <p>
+              模型共有18筆測試資料，預測正確的筆數共有17筆，單一動作模型的準確度為94.44%。
+            </p>
+            <p>
+              多種動作的訓練 <br />
+              將五種不同動作的資料，依照各類資料筆數來區分成五個分數：<br />
+              (a) 三角式(Triangle Pose)標記為0.08<br />
+              (b) 樹式(Tree Pose)標記為0.2<br />
+              (c) 騎士二式(Virabhadrasana Ⅱ Pose)標記為0.41<br />
+              (d) 下犬式(Downward Dog Pose)標記為0.68<br />
+              (e) 其他動作(Other Pose)標記為0.89<br />
+            </p>
+            <p>
+              設定epoch=1000，利用LSTM及留一交叉驗證法(Leave-One-Out
+              cross-Validation)來訓練此Model，最後將所有影片透過訓練好的Model來進行預測，並輸出各筆資料之預測值，依照每種動作所標記的分數劃分成5個Range：<br />
+              (a) 三角式(Triangle Pose) Range： R
+              <= 0.15<br />
+              (b) 樹式(Tree Pose) Range： 0.15
+              < R <=0.24<br />
+              (c) 騎士二式(Virabhadrasana Ⅱ Pose) Range： 0.24
+              < R <=0.58<br />
+              (d) 下犬式(Downward Dog Pose) Range： 0.58
+              < R <=0.79<br />
+              (e) 其他動作(Other Pose) Range： 0.79
+              < R<br />
+              測試結果如圖九所示。
+            </p>
+            <p>
+              此模型共有33筆測試資料，預測正確的筆數共有27筆，
+              多種動作模型辨識的準確度為81.82%
+            </p>
+            <div style="display: flex">
+              <div style="width: 50%">
+                <img src="./images/intro9.png" style="width: 90%" alt="" />
+                <h5>圖九 : 單一動作辨識模型的訓練</h5>
+              </div>
+              <div style="width: 50%">
+                <img src="./images/intro10.png" style="width: 90%" alt="" />
+                <h5>圖十 : 多個動作的訓練</h5>
+              </div>
+            </div>
+            <br />
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <!-- tab-content2 -->
+      <div id="tab-content2" class="main">
+        <section class="left">
+          <h5>導覽目錄</h5>
+          <hr />
+          <a href="#content2-1">
+            <li>技術層面</li>
+          </a><br />
+          <a href="#content2-2">
+            <li>非技術層面</li>
+          </a>
+        </section>
+
+        <section class="right">
+          <div id="content2-1">
+            <h3>1. 技術層面</h3>
+            <p>
+              Python: <br>
+              在這次的專題中，搞清楚python相關用法，也獲得許多小技巧。除此之外，對於深度學習成效的判斷也更加了解。
+            </p>
+            <p>
+              資料處理: <br>
+              資料處理的部分，整理資料的時間非常漫長，對於大量資料的處理也因此變得更為熟悉。除了一般會使用到的excel資料，還接觸到了json資料的處理。
+            </p>
+            <p>
+              Linux環境: <br>
+              在這次專題以前，只有在資訊安全的選修課中曾經接觸過Linux作業系統，並且會使用的指令較少也不太熟悉，與介面操作的Windows系統相差非常大，這是我們很不習慣的地方之一。但Linux系統的好處在於，網路上的問題解決方法似乎更多，只要找得到問題的出發點，都不算是太大的困難。
+              <br>
+              除此之外，較困難的地方是安裝的部分，會發現個套件的相依性皆有所差別，也是本專題中處理較久的問題。
+            </p>
+            <br />
+          </div>
+          <div id="content2-2">
+            <h3>2. 非技術層面</h3>
+            <p>
+              問題處理: <br>
+              處理問題的能力與過去相比增長了許多，一開始會自己上網找過資料，找不到答案再問問身旁的朋友，最重要的還有專題指導老師可以詢問。若是以前，有可能會拖到問題變得較嚴重時才會問清楚，而此專題的時間較少、問題也較多，因此在問題的處理上也就更加的積極。
+            </p>
+            <p>
+              找問題的能力: <br>
+              例如：在裝完Cuda後，查看版本卻總是非預期的版本號碼出現，且過了幾個禮拜東西一直安裝不成功，才慢慢覺得奇怪。因此找了好一陣子才發現有可能是因為驅動本身就有Cuda，那系統當然會先抓到驅動程式的Cuda，因此加上環境變數就可以了。<br>
+              經過這件事才慢慢發現，想要解決一個後面的大問題，前面可能會發生的一切小問題都必須完全解決，因此找出問題根源是非常重要的能力，經過這次專題所得到的經驗的是找出許多問題的一部份。
+            </p>
+            <p>
+              PPT的能力使溝通更加清楚: <br>
+              由於Linux系統的不熟悉，因此兩人之間在一開始常因為沒有詳細瞭解對方做的內容而出現問題。對我們來說，雲端簡報是個很好的溝通管道，不只是紀錄所做之事，更是幫助對方釐清目前進度及完成的事或是問題。而自從老師向我們提過應該撰寫每周進度後，對於先前操作內容的資訊，能夠更容易地查詢。
+            </p>
+            <p>
+              合作間的溝通協調(分工): <br>
+              合作本身這件事就容易發生誤解、不理解的事情發生，因此除了PPT來溝通，還有時間、工作的協調都很重要。以我們為例：我們跟老師的meeting在周四上午，禮拜四下午A同學有課，因此只能夠花早上到中午的時間來作專題，這時B同學在學校就可以待在實驗室做到晚上。而由於周二、周三及周六B同學有課，因此周五、周日及周一就會花一兩天來研究。周一及周三A同學也比較有空可以做。由此可看出時間協調的重要性，而工作的分配也很重要，但主要可透過誰先做，誰先去解決，若無法解決則給下一人接手，並透過PPT報告彼此的進度。
+            </p>
+            <p>
+              Meeting的重要性(向指導老師學習): <br>
+              有時跟老師meeting時，就會慢慢發現自己思路較不明確。<br>
+              例如：後面的步驟一直出錯，那若前面都沒問題，就有可能是版本的問題，因此建議看網路的文章，跟著他們安裝的版本來做可能較好，因為對整個系統都不熟悉。 <br>
+              例如: sudo rm指令不能亂用，因為可能會把系統中很重要的資料刪掉無法復原，導致系統上其他具有相依性的套件可能都無法使用。
+            </p>
+            <br />
+          </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <!-- tab-content3 -->
+      <div id="tab-content3" class="main">
+        <section class="left">
+          <h5>導覽目錄</h5>
+          <hr />
+          <a href="#content3-1">
+            <li>成果展</li>
+          </a><br />
+          <a href="#content3-2">
+            <li>小論文投稿</li>
+          </a><br />
+        </section>
+
+        <section class="right">
+          <div id="content3-1" style="display: flex;">
+            <div style="width: 80%;">
+              <h3>1. 成果展</h3>
+              <p>
+                畢業專題成果展獲得第二名 <br>
+                在果展中看到了許多，也獲得許多老師的建議，是個非常有意義的活動。
+              </p>
+            </div>
+            <div style="width: 20%;">
+              <img src="./images/award.jpg" style="max-width: 100%;" alt="">
+            </div>
+          </div>
+          <div id="content3-2">
+            <h3>2. 小論文投稿、參加研討會</h3>
+            <p>
+              小論文連結:
+            </p>
+            <br>
+            <p>
+              參加IMP2021第26屆國際資訊管理暨實務研討會，研討會中....
+            </p>
+            <br />
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="./js/navshadow.js"></script>
+</body>
+
+</html>

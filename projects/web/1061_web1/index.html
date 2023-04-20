@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web1:Introduction</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <base target="_blank" />
+    <link rel="shortcut icon" href="./images/icon1.png" />
+    <link rel="bookmark" href="./images/icon1.png" />
+  </head>
+
+  <body>
+    <div class="main">
+      <section class="left">
+        <h2>此網站介紹</h2>
+        <h3>
+          本網頁為106年初學html製作<br />
+          近期有加以修正(少數內容與呈現方式)<br />
+          皆為手工製作、無使用模板<br /><br />
+          雖內容可能不多，但在樣式的處理上增加了些許變化<br />
+          在可讀性上面整理了許多問題<br />
+          並且橫線下方皆能夠查看當下頁面的介紹
+        </h3>
+        <hr />
+
+        <button id="show">主頁面介紹</button>
+        <dialog id="dialog">
+          <form method="dialog" class="dialog_content">
+          <h2>主頁面介紹</h2>
+          <h3>頁面格式</h3>
+          <li>section(left、right)</li>
+          <h3>表格應用</h3>
+          <li>tr、th、td</li>
+          <li>colspan、rowspan</li>
+          <li>border style</li>
+          <h3>連結</h3>
+          <li>images</li>
+          <li>a href</li>
+          <li>hover</li>
+          <h3>清單</h3>
+          <li>ul,li、ol,li</li>
+          <h3>其他css相關應用</h3>
+          <li>margin、padding</li>
+          <li>font-size</li>
+          <li>dialog</li>
+          
+        </form>
+        </dialog>
+        
+        <script src="./js/dialog.js"></script>
+        <br />
+        <h3>其他頁面連結</h3>
+        <div style="font-size: x-large">
+          <li><a href="./html/novel.html">小說</a></li>
+          <li><a href="./html/movie.html">電影</a></li>
+          <!-- <li><a href="./html/exercise.html">運動</a></li>
+          <li><a href="./html/art.html">藝文</a></li> -->
+          <li><a href="./html/form.html">問卷調查</a></li>
+        </div>
+      </section>
+      <section class="right">
+        <h1>基本資料與相關介紹(制式自我介紹)</h1>
+        <table>
+          <tr>
+            <th>姓名</th>
+            <td>張小姐</td>
+            <th>性別</th>
+            <td>女</td>
+            <td rowspan="3" style="padding: 0rem">
+              <img
+                src="./images/pic.avif"
+                style="width: 170px; height: 200px"
+                alt=""
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>出生</th>
+            <td>1999/xx/xx</td>
+            <th>電話</th>
+            <td>0937xxxxxx</td>
+          </tr>
+          <tr>
+            <th>信箱</th>
+            <td colspan="3">38weiying@gmail.com</td>
+          </tr>
+          <tr>
+            <th>興趣</th>
+            <td colspan="4">
+              <p>
+                以下列出我感興趣之事物<br />如果你也有以下這些方面的興趣，可點擊參考
+              </p>
+              <ol>
+                <li>
+                  <a href="./html/book.html">小說</a>
+                  <p style="display: inline">: 圖書借閱排行榜</p>
+                </li>
+                <li>
+                  <a href="./html/movie.html">電影</a>
+                  <p style="display: inline">: 全球電影票房排行榜</p>
+                </li>
+                <!-- <li>
+                  <a href="./html/exercise.html">運動</a>
+                  <p style="display: inline">: 多元化運動</p>
+                </li>
+                <li>
+                  <a href="./html/art.html">藝文</a>
+                  <p style="display: inline">: 多元化人文藝術</p> -->
+                </li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th>經歷</th>
+            <td colspan="4">
+              <ul>
+                <li>拔河比賽</li>
+                <li>新生盃排球比賽</li>
+                <li>桌球比賽</li>
+                <li>飢餓30</li>
+                <li>紫錐花聖誕禮物捐贈活動</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th>問卷調查</th>
+            <td colspan="4"><a href="./html/form.html">填問卷拿好禮</a></td>
+          </tr>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>

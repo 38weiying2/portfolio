@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Chart.js:App市場分析</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<!-- 英文+中文字體 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Cormorant+SC&family=Mouse+Memoirs&family=Noto+Serif+TC:wght@500&display=swap"
+		rel="stylesheet" />
+	<!-- chart.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+	<link rel="stylesheet" href="./css/style.css" />
+	<!-- <base target="_blank" /> -->
+	<link rel="shortcut icon" href="./images/icon3.png" />
+	<link rel="bookmark" href="./images/icon3.png" />
+</head>
+
+<body class="d-flex flex-column">
+	<div class="header navbar navbar-dark">
+		<p class="title d-flex align-items-center text-decoration-none px-2">利用Chart.js做App市場分析</p>
+		<nav class="nav d-flex justify-content-end">
+			<a class="me-3 py-2 btn btn-primary" href="#graph1">圖1</a>
+			<a class="me-3 py-2 btn btn-primary" href="#graph2">圖2</a>
+			<a class="me-3 py-2 btn btn-primary" href="#graph3">圖3</a>
+			<a class="me-3 py-2 btn btn-primary" href="#graph4">圖4</a>
+			<a class="me-3 py-2 btn btn-primary" href="#graph5">圖5</a>
+		</nav>
+	</div>
+
+	<div style="padding-left: 10%;">
+		<p class="intro">簡介 : 透過app類別、評分、下載數量、評分數量等等資料畫出圖表，幫助分析市場狀況</p>
+	</div>
+	<div id="graph1" class="wh">
+		<p class="style1">一、APP類別的成功率</p>
+		<canvas id="chart1" style="width: 850px; height: 300px;"></canvas>
+		<br>
+		<span class="style2">
+			<ul>
+				<li>透過平均評分分數來來表示未來各類別APP成功率的比較，幫助開發者找到較容易成功的類別</li>
+				<li>並透過顯示免費及付費app的平均評分分數，讓開發者思考免費及付費APP可能帶來的成功率的差異</li>
+			</ul>
+		</span>
+	</div>
+
+	<div id="graph2" class="wh">
+		<p class="style1">二、APP類別的關注率及討論</p>
+		<canvas id="chart2" style="width: 850px; height: 300px;"></canvas>
+		<br>
+		<span class="style2">
+			<ul>
+				<li>透過展現每一類別的評論數量，幫助開發者選擇較容易受到關注的類別</li>
+				<li>如果選擇一個關注率較高的類別，那開發完後評論數可能越高，甚至能夠幫助APP找到問題，讓APP變得更好，使開發完後的APP能成為評論及更新互相正向影響的APP</li>
+			</ul>
+		</span>
+	</div>
+
+	<div id="graph3" class="wh">
+		<p class="style1">三、每一類別的競爭程度與競爭對手的數量</p>
+		<canvas id="chart3" style="width: 850px; height: 400px;"></canvas>
+		<br>
+		<span class="style2">
+			<ul>
+				<li>幫助開發者能夠了解各類別的競爭程度與競爭對手的數量</li>
+				<li>根據平均下載量可以看出哪些類別競爭程度較高，是否要進入競爭激烈的市場發展獨特的商品，還是進入競爭程度較低的市場，補足市場缺口，成為此市場中的佼佼者</li>
+				<li>而展現競爭對手的數量能讓開發者理解現有市場的競爭者，思考是否在未來的市場中能夠有一席之地</li>
+			</ul>
+		</span>
+	</div>
+
+	<div id="graph4" class="wh">
+		<p class="style1">四、免費及付費APP的討論熱度及民眾付費使用意願</p>
+		<span class="style3">1. 免費APP</span>
+		<canvas id="chart4_5" style="width: 850px; height: 400px;"></canvas>
+	</div>
+
+	<div class="wh">
+		<span class="style3">2. 付費APP</span>
+		<canvas id="chart4_6" style="width: 850px; height: 400px;"></canvas>
+		<br>
+		<span class="style2">
+			<ul>
+				<li>幫助APP開發者從營利取向角度來看哪些種類的APP討論熱度高且民眾付費使用意願高，較能賺錢</li>
+				<li>根據平均評分數量可以看出討論熱度，下載量可以看出民眾的接受度，加上付費APP的平均價格後可以得知該類別的APP大概要設定在多少價錢大家會接受，可以盈利</li>
+				<li>以下圖為例，建議開發Puzzle和 Board類別，因為他們平均價格不算太低且平均評分數量跟平均下載量都較高</li>
+			</ul>
+		</span>
+	</div>
+
+	<div id="graph5" class="wh">
+		<p class="style1">五、近年來各類別有多少競爭者 <br></p>
+		<canvas id="chart5" style="width: 850px; height: 300px;"></canvas>
+		<br>
+		<span class="style2">
+			<ul>
+				<li>幫助APP開發者得知競爭激烈程度，列出各類別每年分別有多少發行數量，除了了解同業競爭對手的數量，也可以了解各類別近年趨勢</li>
+				<li>在開發APP前可以思考一下此類型APP值不值得開發，評估是否有機會超越業界龍頭廠商</li>
+			</ul>
+		</span>
+	</div>
+
+	<div class="wh" id="graph6">
+		<p class="style1">六、APP商機的考量</p>
+		<canvas id="chart6" style="width: 850px; height: 370px;"></canvas>
+		<br>
+		<span class="style2">
+			<ul>
+				<li>透過列出免費APP和付費APP的平均下載量，可讓開發者把較大商機的種類納為一個APP的開發考量因素</li>
+			</ul>
+		</span>
+	</div>
+</body>
+
+<script src="js/chart1.js"></script>
+<script src="js/chart2.js"></script>
+<script src="js/chart3.js"></script>
+<!-- <script src="js/chart4_1.js"></script> -->
+<!-- <script src="js/chart4_2.js"></script> -->
+<!-- <script src="js/chart4_3.js"></script> -->
+<!-- <script src="js/chart4_4.js"></script> -->
+<script src="js/chart4_5.js"></script>
+<script src="js/chart4_6.js"></script>
+<script src="js/chart5.js"></script>
+<script src="js/chart6.js"></script>
+<script src="js/navshadow.js"></script>
+
+</html>

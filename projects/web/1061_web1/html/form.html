@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web1:Survey</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <base target="_blank" />
+    <link rel="shortcut icon" href="../images/icon1.png" />
+    <link rel="bookmark" href="../images/icon1.png" />
+    <style>
+      @media screen and (max-width: 1580px) {
+        section.left,
+        section.left a {
+          font-size: smaller;
+        }
+        th {
+          font-size: 1.3rem;
+        }
+        td,
+        label,
+        select,
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="range"],
+        input[type="file"],
+        textarea {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <section class="left">
+        <h2>此網站介紹</h2>
+        <h3>
+          本網頁為106年初學html製作<br />
+          近期有加以修正(少數內容與呈現方式)<br />
+          皆為手工製作、無使用模板<br /><br />
+          雖內容可能不多，但在樣式的處理上增加了些許變化<br />
+          在可讀性上面整理了許多問題<br />
+          並且橫線下方皆能夠查看當下頁面的介紹
+        </h3>
+        <hr />
+
+        <button id="show">問卷介紹</button>
+        <dialog id="dialog">
+          <form method="dialog" class="dialog_content">
+            <h2>問卷介紹</h2>
+            <h3>form</h3>
+            <li>下拉式選單(select、option)</li>
+            <li>必填才能送出(required)</li>
+            <li>檢查輸入格式(tele、email)</li>
+            <li>最小最大值(number)</li>
+            <li>可調整range step屬性，並顯示目前數值</li>
+            <li>textarea(大小、placeholder文字)</li>
+            <li>上傳檔案(file)</li>
+            <li>button(reset、submit)</li>
+          </form>
+        </dialog>
+
+        <script src="../js/dialog.js"></script>
+        <br />
+        <h3>其他頁面連結</h3>
+        <div style="font-size: x-large">
+          <li><a href="../index.html">主頁</a></li>
+          <li><a href="../html/novel.html">小說</a></li>
+          <li><a href="../html/movie.html">電影</a></li>
+        </div>
+      </section>
+
+      <section class="right">
+        <h1>本網站之問卷調查</h1>
+        <form name="form2">
+          <table>
+            <tr>
+              <th rowspan="2">個人資訊</th>
+              <td>
+                <label for="gender">性別:</label>
+                <select name="gender" id="gender" required>
+                  <option value="">請選擇</option>
+                  <option value="male">男性</option>
+                  <option value="female">女性</option>
+                  <option value="other">其他</option>
+                </select>
+              </td>
+              <td>
+                <label for="tele">電話:</label>
+                <input id="tele" type="text" name="telephone" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="email">信箱:</label>
+                <input id="email" type="email" name="email" required />
+              </td>
+              <td>
+                <label for="age">年齡:</label>
+                <input
+                  type="number"
+                  name="age"
+                  id="age"
+                  value="18"
+                  min="0"
+                  max="120"
+                  required
+                  step="1"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>網站滿意程度</th>
+              <td colspan="2">
+                <label for="">1. 基本要素:</label>
+                <input
+                  type="range"
+                  min="1"
+                  max="5"
+                  step="0.5"
+                  name="range1"
+                  value="5"
+                  oninput="this.nextElementSibling.value = this.value"
+                />
+                <output>5</output>
+                <br />
+                <label for="">2. 整潔:</label>
+                <input
+                  type="range"
+                  min="1"
+                  max="5"
+                  step="0.5"
+                  name="range2"
+                  value="5"
+                  oninput="this.nextElementSibling.value = this.value"
+                />
+                <output>5</output>
+                <br />
+                <label for="">3. 美觀:</label>
+                <input
+                  type="range"
+                  min="1"
+                  max="5"
+                  step="0.5"
+                  name="range3"
+                  value="5"
+                  oninput="this.nextElementSibling.value = this.value"
+                />
+                <output>5</output>
+                <br />
+                <label for="">4. 網頁完整度</label>
+                <input
+                  type="range"
+                  min="1"
+                  max="5"
+                  step="0.5"
+                  name="range4"
+                  value="5"
+                  oninput="this.nextElementSibling.value = this.value"
+                />
+                <output>5</output>
+              </td>
+            </tr>
+            <tr>
+              <th>給網站的建議</th>
+              <td colspan="2">
+                <div style="float: left; margin-right: 2rem">
+                  <textarea
+                    name="suggestion"
+                    id="suggestion"
+                    cols="30"
+                    rows="10"
+                    placeholder="感謝提供建議&#10084;"
+                  ></textarea>
+                </div>
+                <div>
+                  若有圖檔解釋或相關建議檔案可上傳至此
+                  <input type="file" name="file" />
+                </div>
+              </td>
+            </tr>
+          </table>
+          <div
+            style="
+              width: fit-content;
+              margin-top: 2rem;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            <button type="reset" name="reset" value="true">清除重填</button>
+            <button type="submit" name="submit" value="true">送出表單</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>

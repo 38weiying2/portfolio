@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web1:Movie</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <base target="_blank" />
+    <link rel="shortcut icon" href="../images/icon1.png" />
+    <link rel="bookmark" href="../images/icon1.png" />
+    <style>
+      table,
+      th,
+      td {
+        border: 0px;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid gray;
+        padding: 0.5rem 1rem;
+      }
+      td:hover {
+        background-color: rgb(247, 245, 245);
+      }
+      td {
+        width: 19%;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      @media screen and (max-width: 1580px) {
+        section.left,
+        section.left a {
+          font-size: smaller;
+        }
+        th {
+          font-size: 1.3rem;
+        }
+        td {
+          font-size: 1.1rem;
+        }
+        img {
+          width: 100%;
+          height: 140px;
+        }
+      }
+      @media screen and (max-width: 1000px) {
+        table {
+          border: 0px;
+          padding: 0.5rem 1rem;
+        }
+        td {
+          display: flex;
+          width: 95%;
+        }
+        img {
+          max-width: 60%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <section class="left">
+        <h2>此網站介紹</h2>
+        <h3>
+          本網頁為106年初學html製作<br />
+          近期有加以修正(少數內容與呈現方式)<br />
+          皆為手工製作、無使用模板<br /><br />
+          雖內容可能不多，但在樣式的處理上增加了些許變化<br />
+          在可讀性上面整理了許多問題<br />
+          並且橫線下方皆能夠查看當下頁面的介紹
+        </h3>
+        <hr />
+
+        <button id="show">電影介紹</button>
+        <dialog id="dialog">
+          <form method="dialog" class="dialog_content">
+            <h2>電影介紹與主頁差異</h2>
+            <h3>圖片</h3>
+            <li>大小調整(width、height)</li>
+            <h3>連結</h3>
+            <li>外部連結</li>
+            <h3>其他css相關應用</h3>
+            <li>直式書寫(writing-mode: vertical-lr)</li>
+            <li>表格tr的hover</li>
+            <h3>基本RWD</h3>
+            <li>media query</li>
+            <li>利用display:flex來處理較小裝置的表格內容</li>
+          </form>
+        </dialog>
+
+        <script src="../js/dialog.js"></script>
+        <br />
+        <h3>其他頁面連結</h3>
+        <div style="font-size: x-large">
+          <li><a href="../index.html">主頁</a></li>
+          <li><a href="../html/novel.html">小說</a></li>
+          <li><a href="../html/form.html">問卷調查</a></li>
+        </div>
+      </section>
+
+      <section class="right">
+        <h1>2016全球電影票房排行榜前十名</h1>
+        <table>
+          <tr>
+            <th rowspan="2" style="writing-mode: vertical-lr">好棒棒電影院</th>
+            <td>
+              1. 星際大戰7：原力覺醒<br /><img
+                src="../images/星.jpg"
+                alt=""
+              /><br /><a href="https://www.youtube.com/watch?v=Kv0eckWAQkI"
+                >點我看預告</a
+              >
+            </td>
+            <td>
+              2. 美國隊長3<br /><img src="../images/美.jpg" alt="" /><br /><a
+                href="https://www.youtube.com/watch?v=mDQUnWcHSHA"
+                >點我看預告</a
+              >
+            </td>
+            <td>
+              3. 動物方程式<br /><img src="../images/動.jpg" alt="" /><br /><a
+                href="https://www.youtube.com/watch?v=v5ylDdPZm9A"
+                >點我看預告</a
+              >
+            </td>
+            <td>
+              4. 與森林共舞<br /><img src="../images/與.jpg" alt="" /><br /><a
+                href="https://www.youtube.com/watch?v=uEJOAfxSU9c"
+                >點我看預告</a
+              >
+            </td>
+            <td>
+              5. 蝙蝠俠大戰超人<br /><img
+                src="../images/蝙.jpg"
+                alt=""
+              /><br /><a href="https://www.youtube.com/watch?v=O9TPCX01haE"
+                >點我看預告</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              6. 海底總動員2<br /><img src="../images/海.jpg" alt="" /><br /><a
+                href="https://www.youtube.com/watch?v=UDYPztB7E9M"
+                >點我看預告</a
+              >
+            </td>
+            <td>
+              7. 死侍<br /><img src="../images/死.jpg" alt="" /><br /><a
+                href="https://www.youtube.com/watch?v=bVQ9ZXzWZfM"
+                >點我看預告</a
+              >
+            </td>
+            <td>
+              8. 寵物當家<br /><img src="../images/寵.jpg" alt="" /><br /><a
+                href="https://www.youtube.com/watch?v=x1y_8yTydVM"
+                >點我看預告</a
+              >
+            </td>
+            <td>
+              9. 自殺突擊隊<br /><img src="../images/自.jpg" alt="" /><br /><a
+                href="https://www.youtube.com/watch?v=rtD_6DPPqNU"
+                >點我看預告</a
+              >
+            </td>
+            <td>
+              10. x戰警：天啟<br /><img src="../images/x.jpg" alt="" /><br /><a
+                href="https://www.youtube.com/watch?v=mBtk_JHmKgg"
+                >點我看預告</a
+              >
+            </td>
+          </tr>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>

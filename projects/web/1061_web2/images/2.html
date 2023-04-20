@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  #header{
+	  background-color:#91DABC;
+	float: top;
+	width: 100%;
+	height: 70px;
+          }
+body,td,th {
+	color: #4B4B4B;
+}
+	body {
+	background-color: #EBF7AA;
+	text-align: center;
+}
+#gotop {
+    position: fixed;
+    border-radius: 50px;
+    right: 20px;
+    bottom: 30px;
+    padding: 10px 16px;
+    font-size: 25px;
+    background: rgba(41, 39, 21, 0.7);
+    color: #FAFCFD;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#back {
+    position: fixed;
+    border-radius: 50px;
+    left: 10px;
+    bottom: 10px;
+    padding: 6px 9px;
+    font-size: 15px;
+    background: rgba(41, 39, 21, 0.7);
+    color: #FAFCFD;
+    cursor: pointer;
+    z-index: 1000;
+}
+</style>
+	
+</head>
+	
+<body text="#272727" link="#272727" vlink="#5A5A5A" alink="#272727">
+<div id="header">
+    <center><h2 style="font-style: oblique">*****<a href="index.html">主頁</a> | 
+            <a href="1.html">關於我們</a> | 
+            <a href="2.html">購物車</a> | 
+            <a href="3.html">聯絡我們</a> | 
+            <a href="4.html">加入會員</a>  |  
+		<a href="6.html">選擇障礙</a>*****</h2>
+    </center>
+  </div>
+
+	<div id="body">
+	
+	<script src="../js/jquery.min.js"></script>
+	<div id="gotop">Λ</div>
+	<a href="../index.html"><div id="back">back</div></a>
+	<script src="../js/topbtn.js"></script>
+	
+		<center>
+		<h1 style="font-weight: bolder">購物車</h1>
+		<body>
+      <h2 id="mytime"></h2>
+			
+			<h5 style="color: #E70D2F">*即日起，加入會員及享首購免運，並且不定期享有優惠<br>
+			2/2前打85折，請把握優惠!</h5>
+				<h5>到貨日期：從訂購日的次日起，2天～3天左右到貨。<br></h5>
+			<script>
+         showtime();
+
+         function showtime()
+         {
+           var d=new Date();
+           document.getElementById("mytime").
+           innerHTML= d.toLocaleTimeString();
+           setTimeout(showtime,1000);
+         }
+       </script>
+
+			<table width="700" border="1">
+ 
+    <tr>
+      <td>商品照片&nbsp;</td>
+      <td>顏色&nbsp;</td>
+      <td>名稱&nbsp;</td>
+      <td>尺寸&nbsp;</td>
+      <td>長度&nbsp;</td>
+      <td>單價&nbsp;</td>
+      <td>數量&nbsp;</td>
+	  <td>折扣&nbsp;</td>
+      <td>小計&nbsp;</td>
+      <td>刪除&nbsp;</td>
+      <td>備註&nbsp;</td>
+	<tr height="70">
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+	<tr height="70">
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+	<tr height="70">
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		
+    </tr>
+	<tr>
+		<td colspan="11">輸入折價卷:<input name="coupon" type="text"></td>
+	</tr>
+	</table>
+			
+	
+	<input type="button" value="確認">
+	
+			
+	  </center>
+</body>
+</html>

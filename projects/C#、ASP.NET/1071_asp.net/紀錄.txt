@@ -1,0 +1,5 @@
+style
+background-color: #FFFFC6"; 
+background-image: url('D:\Desktop\1061611new4\image\mona-eendra-208388-unsplash.jpg')
+
+<body background="背景圖片的網址">

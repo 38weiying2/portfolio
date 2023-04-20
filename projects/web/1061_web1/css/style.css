@@ -1,0 +1,140 @@
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 1rem 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: xx-large;
+}
+
+th,
+td {
+  font-size: x-large;
+}
+
+a {
+  text-decoration: none;
+  color: peru;
+  padding: 0.2rem;
+}
+
+a:hover {
+  background-color: darksalmon;
+  color: aliceblue;
+}
+
+button[type="reset"],
+button[type="submit"],
+button {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+legend {
+  font-size: 1.8rem;
+}
+
+label,
+select,
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="range"],
+input[type="file"],
+textarea {
+  font-size: 1.3rem;
+}
+
+dialog {
+  border: none;
+  box-shadow: 0 2px 6px #ccc;
+  width: 30%;
+  height: 60%;
+  overflow-y: scroll;
+  border-radius: 5px;
+  font-size: larger;
+}
+
+.dialog_content h2 {
+  background-color: rgb(248, 248, 195);
+  text-align: center;
+  margin: 1.5rem;
+}
+
+.dialog_content h3 {
+  margin-left: 2rem;
+}
+.dialog_content li {
+  margin-left: 4rem;
+}
+.dialog_content {
+  margin-bottom: 1rem;
+}
+
+/* dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+
+.main {
+  width: 100%;
+  display: flex;
+}
+
+section.left {
+  width: 20%;
+  min-width: 12%;
+  padding: 3rem;
+}
+section.right {
+  padding: 0rem 3rem 0rem 0rem;
+  width: 80%;
+}
+
+@media screen and (max-width: 1580px) {
+  section.left {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    margin-top: 0;
+  }
+
+  section.right {
+    padding-left: 1rem;
+    margin-top: 0;
+  }
+  section.left,
+  section.left a {
+    font-size: smaller;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+  }
+  th {
+    font-size: 1.3rem;
+  }
+  td {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYLE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Timer</title>
+	
+	<style>
+	a:hover{background:yellow;}
+	#gotop {
+		position: fixed;
+		border-radius: 50px;
+		right: 20px;
+		bottom: 30px;
+		padding: 10px 16px;
+		font-size: 25px;
+		background: rgba(41, 39, 21, 0.7);
+		color: #FAFCFD;
+		cursor: pointer;
+		z-index: 1000;
+	}
+
+	#back {
+		position: fixed;
+		border-radius: 50px;
+		left: 10px;
+		bottom: 10px;
+		padding: 6px 9px;
+		font-size: 15px;
+		background: rgba(41, 39, 21, 0.7);
+		color: #FAFCFD;
+		cursor: pointer;
+		z-index: 1000;
+	}
+	</style>
+</head>
+
+<body>
+<script src="../js/jquery.min.js"></script>
+<div id="gotop">Λ</div>
+<a href="../index.html"><div id="back">back</div></a>
+<script src="../js/topbtn.js"></script>
+	<h3>if you don't know what should you choose.<br>
+		please take a rest for three second.<br>
+		we will help you, and jump to another website automatically.<br>
+        or just click <a href="5.html">little game</a>
+      </h3>
+    <script>
+        setTimeout(
+        function()
+        {location.href="5.html";}
+         ,3000);
+    </script>
+    </center>
+  </div>		
+</body>
+</html>	
